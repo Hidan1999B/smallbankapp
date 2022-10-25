@@ -1,0 +1,34 @@
+{
+  "name": "banking_application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --timeout 10000 --exit",
+    "seaport": "./node_modules/.bin/seaport",
+    "start": "run.sh",
+    "inits-server1": "node app.js",
+    "inits-server2": "node app.js",
+    "inits-loadbalancer": "node loadbalancer.js",
+    "init-server": "npm run seaport listen 9090",
+    "oneclick": "start npm run init-server & start npm run inits-server1 & start npm run inits-server2 & start npm run inits-loadbalancer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fetch": "^1.1.0",
+    "http-proxy": "^1.18.1",
+    "mongoose": "^5.10.11",
+    "seaport": "^2.0.9"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1",
+    "mocha-steps": "^1.3.0",
+    "node-fetch": "^2.6.1"
+  }
+}
